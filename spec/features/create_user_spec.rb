@@ -16,6 +16,7 @@ describe "Creating a new user" do
     fill_in "Email", with: "user@example.com"
     fill_in "Password", with: "abracadabra"
     fill_in "Confirm Password", with: "abracadabra"
+    fill_in "Username", with: "Username"
 
     click_button 'Create Account'
 
