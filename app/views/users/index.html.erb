@@ -8,7 +8,8 @@
   <% @users.each do |user| %>
       <li>
         <%=	 user.id %> |
-        <%= link_to user.name, user %>
-      </li>
+        <%= link_to user.name, user %> |
+        <%= user.created_at.strftime('Membre depuis le:  %m/%d/%Y à  %H:%M') %>
+             </li>
   <% end %>
 </ul>
