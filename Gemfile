@@ -8,9 +8,9 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-# group :production do
-#   gem 'pg'
-# end
+group :production do
+   gem 'pg'
+ end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -49,7 +49,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+ gem 'debugger', group: [:development, :test]
 
 group :test, :development do
   gem "minitest"

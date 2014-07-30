@@ -24,7 +24,7 @@ end
 def user_attributes(overrides = {})
   {
     name: "Example User",
-    email: "user@example.com",
+    email: "larry@example.com",
     password: "abracadabra",
     password_confirmation: "abracadabra",
     username:'username'

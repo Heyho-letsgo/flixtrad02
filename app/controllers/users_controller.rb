@@ -1,10 +1,41 @@
 class UsersController < ApplicationController
 
+=begin
   def index
-    @users = User.all.orderedd
-  end
+    @users = User.order("#{params[:sort_param]}")
 
-  def show
+
+
+    #@users = User.all.orderedd
+    #@usersn = User.all.ordereda
+  end
+=end
+
+  def index
+    @users = User.all
+end
+
+=begin
+    params[:sort_param] = %w{name created_at id}.include?(params[:sort_param]) ? params[:sort_param] : 'name'
+    params[:sort_param2] = %w{name created_at id}.include?(params[:sort_param2]) ? params[:sort_param2] : 'name'
+
+
+    if params[:sort_params]
+      @users = User.order "#{params[:sort_param]} ASC"
+    else
+      params[:sort_params2]
+      @users = User.order "#{params[:sort_param2]} DESC"
+    end
+=end
+
+
+
+
+
+
+
+
+    def show
     @user = User.find(params[:id])
   end
 

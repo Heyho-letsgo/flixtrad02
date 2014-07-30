@@ -12,8 +12,10 @@
         <%= link_to user.name, user %> |
         <%= user.created_at.strftime('Membre depuis le: %A/%d/%m/%Y à  %H:%M') %>
              </li>
-  <% end %>
+        <% end %>
 </ul>
 
-
-<%= link_to"ordonné", users_path%>
+<%= link_to '↑name', users_path(:sort_param => "name"), class: 'button' %>
+<%= link_to '↑created_at', users_path(:sort_param => "created_at"), class: 'button' %>
+<%= link_to '↑id', users_path(:sort_param => "id"), class: 'button' %>
+<%= link_to 'id', users_path(:sort_param2 => "id"), class: 'button' %>
