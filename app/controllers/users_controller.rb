@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  before_action :require_signin, except: [:new, :create]
 =begin
   def index
     @users = User.order("#{params[:sort_param]}")
