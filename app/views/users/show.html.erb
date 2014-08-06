@@ -11,6 +11,7 @@
 
 <footer>
   <nav>
+    <%	 if current_user?(@user) %>
     <%= link_to 'Edit Account',
                 edit_user_path(@user),
                 method: :get,
@@ -21,5 +22,6 @@
                 method: :delete,
                 data: { confirm: 'Are you sure you want to permanently delete your account?' },
                 class: 'button' %>
+        <%	 end %>
   </nav>
 </footer>

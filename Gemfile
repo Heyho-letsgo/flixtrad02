@@ -52,10 +52,11 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
  gem 'debugger', group: [:development, :test]
 
 group :test, :development do
-  gem "minitest"
+  #gem "minitest"
   gem "rspec-rails", "2.14.1"
 end
 
+gem 'debugger-xml'
 group :test do
   gem "capybara", "2.2.1"
 end
