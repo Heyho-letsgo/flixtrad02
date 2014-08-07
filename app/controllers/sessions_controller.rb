@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
     if user = User.authenticate(params[:email], params[:password])
       session[:user_id] = user.id
-      flash[:notice] = "Welcome back, #{user.name}!"
+      flash[:notice] = "Welcome back #{user.username}!"
       redirect_to(session[:intended_url] || user)
       session[:intended_url] = nil
     else

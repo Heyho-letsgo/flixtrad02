@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
   before_action :require_signin, except: [:new, :create]
-  before_action :require_correct_user, only: [:edit, :update, :destroy]
+  before_action :require_correct_user, only: [:edit, :update]
+  before_action :require_admin, only: [:destroy]
   def index
     @users = User.all
 end
@@ -15,18 +16,22 @@ end
     #@usersn = User.all.ordereda
   end
 =end
-=begin
-    params[:sort_param] = %w{name created_at id}.include?(params[:sort_param]) ? params[:sort_param] : 'name'
-    params[:sort_param2] = %w{name created_at id}.include?(params[:sort_param2]) ? params[:sort_param2] : 'name'
+  def order
+  params[:sort_param] = %w{name created_at id}.include?(params[:sort_param]) ? params[:sort_param] : 'id'
+  params[:sort_param2] = %w{name created_at id}.include?(params[:sort_param2]) ? params[:sort_param2] : 'id'
+
+  if params[:sort_params]
+    @users = User.order "#{params[:sort_param]} ASC"
+  else
+    params[:sort_params2]
+    @users = User.order "#{params[:sort_param2]} DESC"
+  end
 
 
-    if params[:sort_params]
-      @users = User.order "#{params[:sort_param]} ASC"
-    else
-      params[:sort_params2]
-      @users = User.order "#{params[:sort_param2]} DESC"
-    end
-=end
+  end
+
+
+
   def show
     @user = User.find(params[:id])
   end
@@ -56,9 +61,9 @@ end
   end
   def destroy
 
-     # @user = User.find(params[:id])
+      @user = User.find(params[:id])
       @user.destroy
-      session[:user_id] = nil
+     # session[:user_id] = nil # Puisque c'est l'admin qui est connecté
       redirect_to root_url, alert: "Account successfully deleted!"
     end
 end
@@ -72,14 +77,5 @@ def require_correct_user
   @user = User.find(params[:id])
     redirect_to root_url unless current_user?(@user)
   end
-
-
-
-
-
-
-
-
-
 
 

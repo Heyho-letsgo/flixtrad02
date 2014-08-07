@@ -1,4 +1,8 @@
 class MoviesController < ApplicationController
+  before_action :require_signin, except: [:index, :show]
+  before_action :require_admin, except: [:index, :show]
+
+
   def index
     @movies = Movie.released
   end
@@ -44,5 +48,5 @@ private
   def movie_params
     params.require(:movie).permit(:title, :description, :rating, :released_on, :total_gross, :cast, :director, :duration, :image_file_name)
   end
-end
 
+end
