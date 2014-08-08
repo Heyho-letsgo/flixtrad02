@@ -28,6 +28,6 @@ def user_attributes(overrides = {})
     password: "abracadabra",
     password_confirmation: "abracadabra",
     username:"username",
-    admin:"false"
+    admin: 'f'
   }.merge(overrides)
 end

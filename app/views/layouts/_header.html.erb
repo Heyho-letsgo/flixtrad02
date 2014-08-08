@@ -3,6 +3,9 @@
     <h1><%= link_to 'Flix', root_path %></h1>
     <nav>
       <p>
+        <%	 if current_user_admin? %>
+        <%= "Admin" %>
+            <%	 end %>
         <% if current_user %>
             <%= link_to current_user.name, current_user, class: 'button' %>
             <%= link_to 'Sign Out',session_path, method: :delete, class: 'button' %>
