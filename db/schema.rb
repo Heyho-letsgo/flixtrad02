@@ -38,11 +38,6 @@ ActiveRecord::Schema.define(version: 20140808102715) do
 
   add_index "reviews", ["movie_id"], name: "index_reviews_on_movie_id"
 
-  create_table "sessions", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
