@@ -27,8 +27,6 @@ end
     params[:sort_params2]
     @users = User.order "#{params[:sort_param2]} DESC"
   end
-
-
   end
 
 
@@ -36,7 +34,9 @@ end
   def show
     @user = User.find(params[:id])
     @reviews = @user.reviews
+    @favorite_movies = @user.favorite_movies
   end
+
   def new
     @user = User.new
   end
