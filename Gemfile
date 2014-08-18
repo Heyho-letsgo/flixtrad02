@@ -7,7 +7,7 @@ gem 'rails', '4.1.4'
 group :development, :test do
   gem 'sqlite3'
   gem 'jazz_hands'
-  gem 'better_errors'
+
 end
 
 group :production do
