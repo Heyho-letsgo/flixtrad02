@@ -11,7 +11,7 @@ describe "Favoriting a movie" do
 
     visit movie_url(movie)
 
-    expect(page).to have_text("0 fans")
+    expect(page).to have_text("Fans")
 
     expect {
       click_button 'Fave'

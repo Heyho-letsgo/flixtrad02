@@ -73,7 +73,7 @@ end
   private
 def user_params
   params.require(:user).
-      permit(:name, :email, :password, :password_confirmation, :username)
+      permit(:name, :email, :password, :password_confirmation, :username, :admin)
 end
 def require_correct_user
   @user = User.find(params[:id])
