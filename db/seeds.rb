@@ -133,8 +133,8 @@ movie.reviews.create!(name: "Elvis Mitchell", stars: 5, comment: "It's a bird, i
 
 
 movie = Movie.find_by(title: 'Iron Man')
-movie.fans << Andydandy
-movie.fans << Angelina
+movie.fans << Andy
+movie.fans << Angie
 
 Genre.create!(name: "Action")
 Genre.create!(name: "Comedy")
