@@ -10,12 +10,13 @@ describe "Favoriting a movie" do
     movie = Movie.create!(movie_attributes)
 
     visit movie_url(movie)
-
-    expect(page).to have_text("Fans")
-
     expect {
       click_button 'Fave'
     }.to change(@user.favorites, :count).by(1)
+
+    within("aside#sidebar") do
+      expect(page).to have_text("Fans")
+    end
 
     expect(current_path).to eq(movie_path(movie))
 

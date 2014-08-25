@@ -8,7 +8,8 @@
       <li class="create-movie">
         <%= link_to 'Add New Movie', new_movie_path, class: 'button' %>
       </li>
-          <%	 end %>
+          <% end %>
     </ul>
   </nav>
-</aside>
+  <%= content_for (:side) %>
+  </aside>
