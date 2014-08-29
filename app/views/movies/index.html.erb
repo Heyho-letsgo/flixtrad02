@@ -1,11 +1,14 @@
+<%	 content_for :side do%>
 <ul>
 <%	 @genres.each do |genre|%>
 
 <li>
-  <%=  genre.name %>
+  <%=  link_to genre.name, genre   %>
 </li>
     <%	 end %>
+
 </ul>
+<%	 end %>
 
 <ul id="movies">
   <% @movies.each do |movie| %>

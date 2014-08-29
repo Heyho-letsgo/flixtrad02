@@ -37,7 +37,7 @@ describe "Viewing a user's profile page" do
 
     visit user_url(user)
 
-    expect(page).to have_title("Flix - #{user.name}")
+    expect(page).to have_title(user.name)
   end
 
 end

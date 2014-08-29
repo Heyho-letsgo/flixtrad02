@@ -3,10 +3,13 @@ class MoviesController < ApplicationController
   before_action :require_admin, except: [:index, :show]
 
 
+
+
   def index
     @movies = Movie.released
     @genres = Genre.all
-  end
+   end
+
 
   def show
     @movie = Movie.find(params[:id])
@@ -55,5 +58,7 @@ private
   def movie_params
     params.require(:movie).permit(:title, :description, :rating, :released_on, :total_gross, :cast, :director, :duration, :image_file_name, genre_ids: [])
   end
+
+
 
 end

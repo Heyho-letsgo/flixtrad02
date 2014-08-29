@@ -1,6 +1,6 @@
 class GenresController < ApplicationController
-    before_action :require_signin
-    before_action :require_admin
+    before_action :require_signin, except: [:show, :index]
+    before_action :require_admin, except: [:show, :index]
 
 
     def index
