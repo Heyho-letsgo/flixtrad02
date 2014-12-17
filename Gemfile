@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
- ruby '2.1.1'
+ ruby '1.9.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
+
 
 group :development, :test do
   gem 'sqlite3'
@@ -12,7 +13,7 @@ end
 
 group :production do
    gem 'pg'
- end
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -42,23 +43,18 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
- gem 'bcrypt-ruby', '3.1.2'
+ gem 'bcrypt'
 
 # Use unicorn as the app server
 # gem 'unicorn'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# a garder ##################
 
-# Use debugger
- gem 'debugger', group: [:development, :test]
-
+gem 'debugger', group: [:development, :test]
 group :test, :development do
-  #gem "minitest"
   gem "rspec-rails", "2.14.1"
 end
 
-gem 'debugger-xml'
 group :test do
   gem "capybara", "2.2.1"
 end
